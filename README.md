@@ -1,67 +1,144 @@
-Felix Chigozirim Uwakara
-BHU/24/04/05/0093
-Computer science
+# 📱 Login App — Flutter Assignment
 
-# Login App
+> **Student:** Felix Chigozirim Uwakara  
+> **Matric No:** BHU/24/04/05/0093  
+> **Department:** Computer Science  
+> **Repository:** [github.com/felixuwakara/Login_app](https://github.com/felixuwakara/Login_app)
 
-A simple Flutter app with a login screen and a registration screen, built as a school assignment.
+---
 
-**Name:** Your Full Name
-**Matric No:** Your Matric Number
-**Course:** Your Course Code and Title
+## 📌 Project Overview
 
-## Features
+This is a mobile application built with **Flutter** and **Dart** as a school assignment. It demonstrates the implementation of a **Login Screen** and a **Registration Screen** with complete client-side form validation, built using Flutter's Material 3 design system.
 
-- Login screen with email and password fields
-- Registration screen with full name, email, password and confirm password
+The app runs on **Android**, **Web**, and **Windows** from a single shared codebase.
+
+---
+
+## ✨ Features
+
+### 🔐 Login Screen
+- Email input field with keyboard type set to email
+- Password input field with show/hide toggle
 - Form validation:
-  - Required fields cannot be empty
+  - Email field cannot be empty
+  - Email must contain `@` and `.` to be valid
+  - Password cannot be empty
+  - Password must be at least 6 characters long
+- On successful validation, a success **SnackBar** message is shown
+- "Don't have an account?" link to navigate to the Registration screen
+
+### 📝 Registration Screen
+- Full name input field
+- Email input field
+- Password input field with show/hide toggle
+- Confirm password field
+- Form validation:
+  - All fields are required
   - Email must be in a valid format
   - Password must be at least 6 characters
-  - Confirm password must match the password
-- Show and hide password toggle
-- Navigation between the login and registration screens
-- Works on Android, web and Windows from the same code
+  - Confirm password must exactly match the password
+- On successful registration, a success **SnackBar** is shown and the user is navigated back to the Login screen
+- "Already have an account?" link to go back to Login
 
-## Technologies Used
+---
 
-- Flutter
-- Dart
-- Material 3 design
-- Android Studio
+## 🛠️ Technologies Used
 
-## Project Structure
+| Technology | Purpose |
+|------------|---------|
+| Flutter | Cross-platform UI framework |
+| Dart | Programming language |
+| Material 3 | UI design system (Indigo color scheme) |
+| Android Studio | IDE used for development |
+
+---
+
+## 📁 Project Structure
 
 ```
 login_app/
 ├── lib/
-│   └── main.dart     # App entry point, LoginScreen and RegisterScreen
-├── pubspec.yaml      # Project settings and dependencies
-└── README.md
+│   └── main.dart          # App entry point + LoginScreen + RegisterScreen
+├── android/               # Android platform files
+├── ios/                   # iOS platform files
+├── web/                   # Web platform files
+├── windows/               # Windows platform files
+├── test/
+│   └── widget_test.dart   # Default Flutter tests
+├── pubspec.yaml           # Project metadata and dependencies
+└── README.md              # Project documentation
 ```
 
-## How to Run
+### Key Classes in `main.dart`
 
-1. Install [Flutter](https://docs.flutter.dev/get-started/install) and Android Studio.
-2. Clone this repository:
+| Class | Type | Description |
+|-------|------|-------------|
+| `MyApp` | `StatelessWidget` | Root app widget, sets theme and home screen |
+| `LoginScreen` | `StatefulWidget` | Login form with email and password fields |
+| `_LoginScreenState` | `State` | Handles login form state and validation logic |
+| `RegisterScreen` | `StatefulWidget` | Registration form with 4 input fields |
+| `_RegisterScreenState` | `State` | Handles registration form state and validation |
+
+---
+
+## 🚀 How to Run
+
+### Prerequisites
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) installed
+- Android Studio or VS Code with Flutter extension
+- An Android emulator or physical device (or a browser for web)
+
+### Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/felixuwakara/Login_app.git
+   cd Login_app/login_app
    ```
-   git clone https://github.com/yourusername/login_app.git
-   cd login_app
-   ```
-3. Get the dependencies:
-   ```
+
+2. **Install dependencies:**
+   ```bash
    flutter pub get
    ```
-4. Run the app:
+
+3. **Run on Android (emulator or device):**
+   ```bash
+   flutter run
    ```
+
+4. **Run on Web (Chrome):**
+   ```bash
    flutter run -d chrome
    ```
-   To run on an Android phone or emulator instead, use `flutter run`.
 
-## Screenshots
+5. **Run on Windows:**
+   ```bash
+   flutter run -d windows
+   ```
 
-Add screenshots of the login and registration screens here.
+---
 
-## Notes
+## 🧠 Concepts Demonstrated
 
-This app has no backend. Validation runs on the device, and a message is shown when the form is filled in correctly.
+- **StatefulWidget & State management** — managing form input and password visibility toggle
+- **Form & GlobalKey** — Flutter's built-in form validation system
+- **TextEditingController** — capturing and reading text field values
+- **Navigator** — screen-to-screen navigation using `push` and `pop`
+- **SnackBar** — displaying feedback messages to the user
+- **Material 3 design** — using `FilledButton`, `TextFormField`, `OutlineInputBorder`
+- **Cross-platform development** — single Dart codebase targeting Android, Web, and Windows
+
+---
+
+## ⚠️ Notes
+
+- This app has **no backend or database**. All validation is performed on the device (client-side only).
+- No actual authentication occurs — the login and registration success messages are simulated UI feedback.
+- This project was created purely for learning and assignment purposes.
+
+---
+
+## 📄 License
+
+This project is submitted as an academic assignment and is not licensed for commercial use.
