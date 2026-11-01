@@ -1,7 +1,7 @@
-# 📱 Login App — Flutter Assignment
+# 📱 Login App 
 
 > **Student:** Felix Chigozirim Uwakara  
-> **Matric No:** BHU/24/04/05/0093  
+> **Matric No:** BHU/24/04/05/0093 
 > **Department:** Computer Science  
 > **Repository:** [github.com/felixuwakara/Login_app](https://github.com/felixuwakara/Login_app)
 
@@ -139,6 +139,3 @@ login_app/
 
 ---
 
-## 📄 License
-
-This project is submitted as an academic assignment and is not licensed for commercial use.
